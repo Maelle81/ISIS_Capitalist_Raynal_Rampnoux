@@ -5,22 +5,72 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      coucou
     </div>
   );
 }
+
+const GET_WORLD = gql`
+query ExampleQuery{
+  getWorld {
+    name
+    logo
+    score
+    money
+    totalangels
+    activeangels
+    angelbonus
+    lastupdate
+    products {
+      id
+      name
+      logo
+      cout
+      croissance
+      revenu
+      vitesse
+      quantite
+      timeleft
+      managerUnlocked
+    }
+    allunlocks {
+      name
+      logo
+      seuil
+      idcible
+      ratio
+      typeratio
+      unlocked
+    }
+    upgrades {
+      name
+      logo
+      seuil
+      idcible
+      ratio
+      typeratio
+      unlocked
+    }
+    angelupgrades {
+      name
+      logo
+      seuil
+      idcible
+      ratio
+      typeratio
+      unlocked
+    }
+    managers {
+      name
+      logo
+      seuil
+      idcible
+      ratio
+      typeratio
+      unlocked
+    }
+  }
+}
+
 
 export default App;
