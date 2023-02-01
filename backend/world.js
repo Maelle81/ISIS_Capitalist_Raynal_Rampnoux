@@ -1,4 +1,4 @@
-module.exports = 
+module.exports =       
     {
     "name": "Nom du monde",
     "logo": "icones/logomonde.jpg",
