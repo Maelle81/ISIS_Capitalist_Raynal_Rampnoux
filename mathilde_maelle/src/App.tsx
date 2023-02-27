@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { gql, useQuery } from "@apollo/client";
+import Main from "./components/Main";
+import "./assests/css/style.css"
 
 const GET_WORLD = gql`
   query getWorld {
@@ -71,6 +73,13 @@ function App() {
 
   const [usernamechamp, setUsernamechamp] = useState("");
 
+  const {loading, error, data, refetch } = useQuery(GET_WORLD, {
+    context: { headers: { "x-user": username } }
+  });  
+
+  /*permet de valider son usrname avec un input button
+  et de le sauvegarder */
+
   useEffect(() => {
     let username = localStorage.getItem("username");
     console.log(username);
@@ -90,13 +99,16 @@ function App() {
     localStorage.setItem("username", usernamechamp);
   };
 
-  const {loading, error, data, refetch } = useQuery(GET_WORLD, {
-    context: { headers: { "x-user": username } }
-  });
+  
+
+  let corps = undefined
+  if (loading) corps = <div> Loading... </div>
+  else if (error) corps = <div> Erreur de chargement du monde ! </div>
+  else corps = <Main loadworld={data.getWorld} username={username} />
 
   return (
     <div className="App">
-      <form>
+      <div>
         <label>
           Name:{" "}
           <input
@@ -106,24 +118,10 @@ function App() {
           />
         </label>
         <input type="button" value="Submit" onClick={onUserNameChanged} />
-      </form>
-      <div className="header">
-        <div> logo monde </div>
-        <div> argent </div>
-        <div> multiplicateur </div>
-        <div> ID du joueur </div>
       </div>
-      <div className="main">
-        <div> liste des boutons de menu </div>
-        <div className="product">
-          <div> premier produit </div>
-          <div> second produit </div>
-          <div> troisième produit </div>
-          <div> quatrième produit </div>
-          <div> cinquième produit </div>
-          <div> sixième produit </div>
-        </div>
-      </div>
+      <div>
+        { corps }
+      </div>     
     </div>
   );
 }
