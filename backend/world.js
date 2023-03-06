@@ -2,7 +2,7 @@ module.exports =
     {
     "name": "Nom du monde",
     "logo": "icones/logomonde.jpg",
-    "money": 0,
+    "money": 10,
     "score": 0,
     "totalangels": 0,
     "activeangels": 0,
@@ -11,13 +11,13 @@ module.exports =
     "products": [
         {
         "id": 1,
-        "name": "premier produit",
-        "logo": "icones/premierproduit.jpg",
-        "cout": 4,
+        "name": "Esquisse au gris",
+        "logo": "icones/drawing1.png",
+        "cout": 1,
         "croissance": 1.07,
         "revenu": 1,
         "vitesse": 500,
-        "quantite": 1,
+        "quantite": 0,
         "timeleft": 0,
         "managerUnlocked": false,
         "palliers": [
@@ -43,9 +43,8 @@ module.exports =
         },
         {
         "id": 2,
-        "name": "Deuxième produit",
-        "logo": "icones/deuxiemeproduit.jpg",
-        "logo": "icones/premierproduit.jpg",
+        "name": "Portait au gris",
+        "logo": "icones/drawing2.png",
         "cout": 4,
         "croissance": 1.07,
         "revenu": 1,
@@ -111,7 +110,7 @@ module.exports =
         ],
     "managers": [
         {
-        "name": "Wangari Maathai",
+        "name": "manager1",
         "logo": "icones/WangariMaathai.jpg",
         "seuil": 10,
         "idcible": 1,
