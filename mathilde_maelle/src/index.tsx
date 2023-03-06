@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
 
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
@@ -21,7 +22,6 @@ root.render(
     <App />
       </ApolloProvider>
   </React.StrictMode>
-  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
