@@ -30,3 +30,4 @@ export function transform(valeur: number): string {
 
 export function ephemeralMessage(){}
 //message: string | JSX.Element)
+ 

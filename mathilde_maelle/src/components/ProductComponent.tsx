@@ -12,21 +12,25 @@ type ProductProps = {
   onProductionDone: (product: Product, qt : number) => void;
   //onProductBy:(product:Product)=> void;
   qtmulti : string;
-  
+  quantity:number;
 };
 
-export default function ProductComponent({ product, qtmulti, onProductionDone }: ProductProps) {
+export default function ProductComponent({ product, qtmulti, onProductionDone, quantity }: ProductProps) {
+  
   const url = "https://isiscapitalistgraphql.kk.kurasawa.fr/";
-
+  //const url= "http://localhost:4000/graphql/"
+  
   const [timeleft, setTimeLeft] = useState(product.timeleft);
-  const [quantity, setQuantity] = useState(0);
+  
 
   //const [lastupdate, setLastupdate] = useState(product.lastupdate);
   const lastupdate = useRef(Date.now())
 
   const startFabrication = () => {
+    if(product.quantite >0){
     setTimeLeft(product.vitesse);
     lastupdate.current = Date.now();
+    }
   }
   
   function calcScore(){
@@ -52,8 +56,7 @@ export default function ProductComponent({ product, qtmulti, onProductionDone }:
         productNumber=((timeelapsed -timeleft)/product.vitesse)+1
         setTimeLeft(timeelapsed % product.vitesse)
       }
-      console.log(timeleft)
-      
+      //console.log(timeleft)      
     }
     if(productNumber>0){
       onProductionDone(product, productNumber)
@@ -64,12 +67,12 @@ export default function ProductComponent({ product, qtmulti, onProductionDone }:
   useInterval(() => calcScore(), 100);
 
   //Achat de produit
-
+  /*
   function quantityProduct(){
     switch(qtmulti){
       case "x1":
         setQuantity(1)
-        break
+        break 
       case "x10":
         setQuantity(10)
         break
@@ -82,11 +85,14 @@ export default function ProductComponent({ product, qtmulti, onProductionDone }:
       default:
         setQuantity(1)
     }
-  }
-
+  }*/
+  /*
   useEffect(()=>{
     quantityProduct();
-  },[quantity])
+  },[quantity])*/
+
+  /*acheter*/
+
 
   function calcMaxCanBuy(){
     let n = 1
@@ -101,30 +107,43 @@ export default function ProductComponent({ product, qtmulti, onProductionDone }:
   }
 
   return (
-    <Stack direction="row" className="product">
-      <div className="lesdeux" >
-        <div className="lepremier">
+    <div
+    //direction="row" className="product"
+    className="wrapper"
+    >
+      <div 
+      //className="lesdeux" 
+      >
+        <div className="one"
+        //className="lepremier"
+        >
           <img
             className="round"
             src={url + product.logo}
             onClick={startFabrication}
           />
         </div>
-        <div className="lesecond">{product.quantite}</div>
+        <div 
+        className="two"
+        //className="lesecond"
+        >{product.quantite}</div>
       </div>
       <div >
-      <MyProgressbar
-        className="barstyle"
-        vitesse={product.vitesse}
-        initialvalue={product.vitesse - timeleft}
-        run={timeleft > 0 || product.managerUnlocked}
-        frontcolor="#ff8800"
-        backcolor="#ffffff"
-        //auto={product.managerUnlocked}
-        orientation={Orientation.horizontal}
-      />
-      <Button>{quantity}</Button>
+        <div className="three">
+          <MyProgressbar
+            className="barstyle"
+            vitesse={product.vitesse}
+            initialvalue={product.vitesse - timeleft}
+            run={timeleft > 0 || product.managerUnlocked}
+            frontcolor="#ffb99e"
+            backcolor="#ffffff"
+            //auto={product.managerUnlocked}
+            orientation={Orientation.horizontal}
+          />
       </div>
-    </Stack>
+      <Button className="four">{quantity}</Button>
+      <div className="five">{timeleft} ms</div>
+      </div>
+    </div>
   );
 }

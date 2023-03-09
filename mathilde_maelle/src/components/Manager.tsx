@@ -1,6 +1,8 @@
 import { Button } from "@mui/material";
 import { useState } from "react";
 import { Palier, Product, World } from "../world";
+//import Toast from 'react-bootstrap/Toast';
+import { ToastContainer, toast } from "react-toastify";
 //import "../assests/css/LeftMenu.css"
 
 type ManagerProps = {
@@ -16,28 +18,29 @@ export default function Manager({ world, onClose,showManagers,
   //let world = require("../world");
   
   const url = "https://isiscapitalistgraphql.kk.kurasawa.fr/";
-
+  //const url= "http://localhost:4000/graphql/"
+  
   function hireManager(manager: Palier) {
-    if (world.money >= manager.seuil) {
+    if (world.money >= manager.seuil){
       manager.unlocked = true
       world.money -= manager.seuil
       world.products[manager.idcible - 1].managerUnlocked = true
       setShowManagers(false)
-      
+      toast.success(`${manager.name} a été embauché !`)
     }
   }
 
   return (
     <div className="modal">
       {showManagers &&(
-    <div className="scroller">
+    <div className="scroller">      
       <div>
         <h1 className="title">Managers make you feel better !</h1>
       </div>
       <div>
         {
           world.managers
-            .filter((manager) => !manager.unlocked)
+            .filter((manager) => manager.unlocked !==true)
             //manager.unlocked !== true
             .map((manager) => (
               <div key={manager.idcible} className="managergrid">
@@ -58,7 +61,9 @@ export default function Manager({ world, onClose,showManagers,
                   <div className="managercost"> {manager.seuil} </div>
                 </div>
                 <div onClick={() => hireManager(manager)}>
-                  <Button disabled={world.money < manager.seuil}>Hire !</Button>
+                  <Button 
+                  //disabled={world.money < manager.seuil}
+                  >Hire !</Button>
                 </div>
               </div>
             ))

@@ -77,7 +77,7 @@ function App() {
     context: { headers: { "x-user": username } }
   });  
 
-  /*permet de valider son usrname avec un input button
+  /*permet de valider son username avec un input button
   et de le sauvegarder */
 
   useEffect(() => {
@@ -99,6 +99,15 @@ function App() {
     localStorage.setItem("username", usernamechamp);
   };
 
+  /*<label>
+          Name:{" "}
+          <input
+            type="text"
+            value={usernamechamp}
+            onChange={(event) => setUsernamechamp(event.target.value)}
+          />
+        </label>
+        <input type="button" value="Submit" onClick={onUserNameChanged} />*/
   
 
   let corps = undefined
@@ -109,7 +118,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        <label>
+      <label>
           Name:{" "}
           <input
             type="text"

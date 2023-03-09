@@ -22,12 +22,14 @@ export default function Header({ username, qtmulti, loadworld, positionButton }:
     setWorld(JSON.parse(JSON.stringify(world)) as World);
   }, [loadworld]);
 
+  //const url= "http://localhost:4000/graphql/"
+  const url ="https://isiscapitalistgraphql.kk.kurasawa.fr/"
   //onClick={onChangeMulti}
 
   return (
     <AppBar position="static" className="header">
       <Toolbar>
-        <Avatar sx={{ mr: 2 }} alt="Nom Monde" src={"https://isiscapitalistgraphql.kk.kurasawa.fr/" + world.logo}/>
+        <Avatar sx={{ mr: 2 }} alt="Nom Monde" src={ url+ world.logo}/>
         <Typography sx={{ flexGrow: 1 }}>{world.name}</Typography>
         <Box>
             <Typography>{username}</Typography>
