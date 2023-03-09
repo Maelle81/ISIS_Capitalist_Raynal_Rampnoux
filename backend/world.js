@@ -1,8 +1,8 @@
 module.exports =       
     {
-    "name": "Nom du monde",
-    "logo": "icones/logomonde.jpg",
-    "money": 10,
+    "name": "ArtisticBusiness",
+    "logo": "icones/logo.jpg",
+    "money": 1,
     "score": 0,
     "totalangels": 0,
     "activeangels": 0,
@@ -20,24 +20,42 @@ module.exports =
         "quantite": 0,
         "timeleft": 0,
         "managerUnlocked": false,
-        "palliers": [
+        "paliers": [
             {
-            "name": "Nom du premier palier",
+            "name": "Prix de vente d'une Esquisse au gris x1.5",
             "logo": "icones/premierpalier.jpg",
-            "seuil": 20,
+            "seuil": 25,
             "idcible": 1,
-            "ratio": 2,
+            "ratio": 2.5,
             "typeratio": "vitesse",
-            "unlocked": "false"
+            "unlocked": false
             },
             {
-            "name": "Nom deuxième palier",
+            "name": "Prix de vente d'une Esquisse au gris x2",
+            "logo": "icones/deuxiemepalier.jpg",
+            "seuil": 50,
+            "idcible": 2,
+            "ratio": 3,
+            "typeratio": "vitesse",
+            "unlocked": false
+            },
+            {
+            "name": "Prix de vente d'une Esquisse au gris x2",
             "logo": "icones/deuxiemepalier.jpg",
             "seuil": 75,
-            "idcible": 1,
-            "ratio": 2,
+            "idcible": 2,
+            "ratio": 4,
             "typeratio": "vitesse",
-            "unlocked": "false"
+            "unlocked": false
+            },
+            {
+            "name": "Prix de vente d'une Esquisse au gris x3",
+            "logo": "icones/deuxiemepalier.jpg",
+            "seuil": 100,
+            "idcible": 3,
+            "ratio": 5,
+            "typeratio": "vitesse",
+            "unlocked": false
             }
         ]
         },
@@ -49,27 +67,245 @@ module.exports =
         "croissance": 1.07,
         "revenu": 1,
         "vitesse": 500,
-        "quantite": 1,
+        "quantite": 0,
         "timeleft": 0,
         "managerUnlocked": false,
-        "palliers": [
+        "paliers": [
             {
-            "name": "Nom du premier palier",
+            "name": "Vitesse de production d'un Portait au gris x1.5",
             "logo": "icones/premierpalier.jpg",
-            "seuil": 20,
+            "seuil": 25,
+            "idcible": 1,
+            "ratio": 1.5,
+            "typeratio": "vitesse",
+            "unlocked": false
+            },
+            {
+            "name": "Vitesse de production d'un Portait au gris x2",
+            "logo": "icones/deuxiemepalier.jpg",
+            "seuil": 50,
             "idcible": 1,
             "ratio": 2,
             "typeratio": "vitesse",
-            "unlocked": "false"
+            "unlocked": false
             },
             {
-            "name": "Nom deuxième palier",
+            "name": "Vitesse de production d'un Portait au gris x2",
             "logo": "icones/deuxiemepalier.jpg",
             "seuil": 75,
             "idcible": 1,
             "ratio": 2,
             "typeratio": "vitesse",
-            "unlocked": "false"
+            "unlocked": false
+            },
+            {
+            "name": "Vitesse de production d'un Portait au gris x3",
+            "logo": "icones/deuxiemepalier.jpg",
+            "seuil": 100,
+            "idcible": 1,
+            "ratio": 3,
+            "typeratio": "vitesse",
+            "unlocked": false
+            }
+        ]
+        },
+        {
+        "id": 3,
+        "name": "Esquisse en couleur",
+        "logo": "icones/drawing3.png",
+        "cout": 16,
+        "croissance": 1.07,
+        "revenu": 1,
+        "vitesse": 500,
+        "quantite": 0,
+        "timeleft": 0,
+        "managerUnlocked": false,
+        "paliers": [
+            {
+            "name": "Vitesse de production d'une Esquisse en couleur x1.5",
+            "logo": "icones/premierpalier.jpg",
+            "seuil": 25,
+            "idcible": 1,
+            "ratio": 1.5,
+            "typeratio": "vitesse",
+            "unlocked": false
+            },
+            {
+            "name": "Vitesse de production d'une Esquisse en couleur x2",
+            "logo": "icones/deuxiemepalier.jpg",
+            "seuil": 50,
+            "idcible": 1,
+            "ratio": 2,
+            "typeratio": "vitesse",
+            "unlocked": false
+            },
+            {
+            "name": "Vitesse de production d'une Esquisse en couleur x2",
+            "logo": "icones/deuxiemepalier.jpg",
+            "seuil": 75,
+            "idcible": 1,
+            "ratio": 2,
+            "typeratio": "vitesse",
+            "unlocked": false
+            },
+            {
+            "name": "Vitesse de production d'une Esquisse en couleur x3",
+            "logo": "icones/deuxiemepalier.jpg",
+            "seuil": 100,
+            "idcible": 1,
+            "ratio": 3,
+            "typeratio": "vitesse",
+            "unlocked": false
+            }
+        ]
+        },
+        {
+        "id": 4,
+        "name": "Illustration en couleur",
+        "logo": "icones/drawing4.png",
+        "cout": 64,
+        "croissance": 1.07,
+        "revenu": 1,
+        "vitesse": 500,
+        "quantite": 0,
+        "timeleft": 0,
+        "managerUnlocked": false,
+        "paliers": [
+            {
+            "name": "Vitesse de production d'une Illustration en couleur x1.5",
+            "logo": "icones/premierpalier.jpg",
+            "seuil": 25,
+            "idcible": 1,
+            "ratio": 1.5,
+            "typeratio": "vitesse",
+            "unlocked": false
+            },
+            {
+            "name": "Vitesse de production d'une Illustration en couleur x2",
+            "logo": "icones/deuxiemepalier.jpg",
+            "seuil": 50,
+            "idcible": 1,
+            "ratio": 2,
+            "typeratio": "vitesse",
+            "unlocked": false
+            },
+            {
+            "name": "Vitesse de production d'une Illustration en couleur x2",
+            "logo": "icones/deuxiemepalier.jpg",
+            "seuil": 75,
+            "idcible": 1,
+            "ratio": 2,
+            "typeratio": "vitesse",
+            "unlocked": false
+            },
+            {
+            "name": "Vitesse de production d'une Illustration en couleur x3",
+            "logo": "icones/deuxiemepalier.jpg",
+            "seuil": 100,
+            "idcible": 1,
+            "ratio": 3,
+            "typeratio": "vitesse",
+            "unlocked": false
+            }
+        ]
+        },
+        {
+        "id": 5,
+        "name": "Illustration Professionnelle",
+        "logo": "icones/drawing5.png",
+        "cout": 256,
+        "croissance": 1.07,
+        "revenu": 1,
+        "vitesse": 500,
+        "quantite": 0,
+        "timeleft": 0,
+        "managerUnlocked": false,
+        "paliers": [
+            {
+            "name": "Vitesse de production d'une Illustration Professionnelle x1.5",
+            "logo": "icones/premierpalier.jpg",
+            "seuil": 25,
+            "idcible": 1,
+            "ratio": 1.5,
+            "typeratio": "vitesse",
+            "unlocked": false
+            },
+            {
+            "name": "Vitesse de production d'une Illustration Professionnelle x2",
+            "logo": "icones/deuxiemepalier.jpg",
+            "seuil": 50,
+            "idcible": 1,
+            "ratio": 2,
+            "typeratio": "vitesse",
+            "unlocked": false
+            },
+            {
+            "name": "Vitesse de production d'une Illustration Professionnelle x2",
+            "logo": "icones/deuxiemepalier.jpg",
+            "seuil": 75,
+            "idcible": 1,
+            "ratio": 2,
+            "typeratio": "vitesse",
+            "unlocked": false
+            },
+            {
+            "name": "Vitesse de production d'une Illustration Professionnelle x3",
+            "logo": "icones/deuxiemepalier.jpg",
+            "seuil": 100,
+            "idcible": 1,
+            "ratio": 3,
+            "typeratio": "vitesse",
+            "unlocked": false
+            }
+        ]
+        },
+        {
+        "id": 6,
+        "name": "Portait Professionnel",
+        "logo": "icones/drawing6.png",
+        "cout": 1024,
+        "croissance": 1.07,
+        "revenu": 1,
+        "vitesse": 500,
+        "quantite": 0,
+        "timeleft": 0,
+        "managerUnlocked": false,
+        "paliers": [
+            {
+            "name": "Vitesse de production d'un Portait Professionnel x1.5",
+            "logo": "icones/premierpalier.jpg",
+            "seuil": 25,
+            "idcible": 1,
+            "ratio": 1.5,
+            "typeratio": "vitesse",
+            "unlocked": false
+            },
+            {
+            "name": "Vitesse de production d'un Portait Professionnel x2",
+            "logo": "icones/deuxiemepalier.jpg",
+            "seuil": 50,
+            "idcible": 1,
+            "ratio": 2,
+            "typeratio": "vitesse",
+            "unlocked": false
+            },
+            {
+            "name": "Vitesse de production d'un Portait Professionnel x2",
+            "logo": "icones/deuxiemepalier.jpg",
+            "seuil": 75,
+            "idcible": 1,
+            "ratio": 2,
+            "typeratio": "vitesse",
+            "unlocked": false
+            },
+            {
+            "name": "Vitesse de production d'un Portait Professionnel x3",
+            "logo": "icones/deuxiemepalier.jpg",
+            "seuil": 100,
+            "idcible": 1,
+            "ratio": 3,
+            "typeratio": "vitesse",
+            "unlocked": false
             }
         ]
         }
@@ -77,13 +313,40 @@ module.exports =
 
     "allunlocks": [
         {
-        "name": "Nom du premier unlock général",
+        "name": "Tous les produits : revenu x2",
         "logo": "icones/premierunlock.jpg",
-        "seuil": 30,
+        "seuil": 25,
         "idcible": 0,
         "ratio": 2,
         "typeratio": "gain",
-        "unlocked": "false"
+        "unlocked": false
+        },
+        {
+        "name": "Tous les produits : revenu x3",
+        "logo": "icones/premierunlock.jpg",
+        "seuil": 50,
+        "idcible": 0,
+        "ratio": 3,
+        "typeratio": "gain",
+        "unlocked": false
+        },
+        {
+        "name": "Tous les produits : revenu x4",
+        "logo": "icones/premierunlock.jpg",
+        "seuil": 75,
+        "idcible": 0,
+        "ratio": 4,
+        "typeratio": "gain",
+        "unlocked": false
+        },
+        {
+        "name": "Tous les produits : revenu x5",
+        "logo": "icones/premierunlock.jpg",
+        "seuil": 100,
+        "idcible": 0,
+        "ratio": 5,
+        "typeratio": "gain",
+        "unlocked": false
         },
         ],
     "upgrades": [
@@ -94,7 +357,7 @@ module.exports =
         "idcible": 1,
         "ratio": 3,
         "typeratio": "gain",
-        "unlocked": "false"
+        "unlocked": false
         },
         ],
     "angelupgrades": [
@@ -105,18 +368,63 @@ module.exports =
         "idcible": 0,
         "ratio": 3,
         "typeratio": "gain",
-        "unlocked": "false"
+        "unlocked": false
         },
         ],
     "managers": [
         {
-        "name": "manager1",
-        "logo": "icones/WangariMaathai.jpg",
+        "name": "Daniel Buren",
+        "logo": "icones/manager1.jpg",
         "seuil": 10,
         "idcible": 1,
         "ratio": 0,
         "typeratio": "gain",
-        "unlocked": "false"
+        "unlocked": false
+        },
+        {
+        "name": "Victoire Jullien",
+        "logo": "icones/manager2.jpg",
+        "seuil": 10,
+        "idcible": 1,
+        "ratio": 0,
+        "typeratio": "gain",
+        "unlocked": false
+        },
+        {
+        "name": "Carole Astier",
+        "logo": "icones/manager3.jpg",
+        "seuil": 10,
+        "idcible": 1,
+        "ratio": 0,
+        "typeratio": "gain",
+        "unlocked": false
+        },
+        {
+        "name": "Gaston Asselin",
+        "logo": "icones/manager4.jpg",
+        "seuil": 80,
+        "idcible": 1,
+        "ratio": 0,
+        "typeratio": "gain",
+        "unlocked": false
+        },
+        {
+        "name": "Arthur Carré",
+        "logo": "icones/manager5.jpg",
+        "seuil": 10,
+        "idcible": 1,
+        "ratio": 0,
+        "typeratio": "gain",
+        "unlocked": false
+        },
+        {
+        "name": "Lucille Rossignol",
+        "logo": "icones/manager6.jpg",
+        "seuil": 10,
+        "idcible": 1,
+        "ratio": 0,
+        "typeratio": "gain",
+        "unlocked": false
         },
     ]
 };
