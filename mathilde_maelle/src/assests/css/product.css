@@ -1,0 +1,26 @@
+body{
+    --main--color : red;
+    --second--color : #92e1e9;
+    
+}
+
+.lesdeux {
+    position: relative;
+}
+
+.lesecond {
+    position: absolute;
+    /* on met cet élément à 10 pixels du bas de son conteneur
+    / du coup il se superp ose à l’autre qui est dans le flux normal*/
+    bottom: -10px;
+    text-align: center;
+}
+
+.barstyle{
+    border-radius: 0 30px 30px 0;
+    height: 6em;
+}
+
+.product{
+    padding:1em;
+}
