@@ -51,7 +51,7 @@ function scoreMAJ (context) {
         }
     );
 }
-function unlocks (context) {
+function lesUnlocks (context) {
     //Pour tous les pallier : valeur de deblocquage
     var pallier0 = true;
     var pallier1 = true;
@@ -88,13 +88,12 @@ function unlocks (context) {
         else {
             var pallier3 = false;
         }
-    },
+    })
     //MAJ des allunlocks
-    context.world.allunlocks[0] = pallier0,
-    context.world.allunlocks[1] = pallier1,
-    context.world.allunlocks[2] = pallier2,
-    context.world.allunlocks[3] = pallier3,
-    )
+    context.world.allunlocks[0] = pallier0
+    context.world.allunlocks[1] = pallier1
+    context.world.allunlocks[2] = pallier2
+    context.world.allunlocks[3] = pallier3
 }
    
 // service GraphQL : resolveur
@@ -123,32 +122,32 @@ module.exports = {
 
             //incrémente la quantite
             produit.quantite = produit.quantite + args.quantite;
-            console.log("quantite:"+produit.quantite)
+            //console.log("quantite:"+produit.quantite)
 
             //calcule le pris de la somme des quantités qu'on achète
             let coutSommeAchat = ((1 - Math.pow(produit.croissance, args.quantite) )/(1-produit.croissance));
-            console.log("coutSommeAchat:"+coutSommeAchat)
+            //console.log("coutSommeAchat:"+coutSommeAchat)
 
             //déduit le cout d'achat de l'argent du monde
             context.world.money = context.world.money - coutSommeAchat;
-            console.log("money:"+context.world.money )
+            //console.log("money:"+context.world.money )
             
             //calcul la valeur du prochain cout
             produit.cout = produit.cout * Math.pow(produit.croissance, args.quantite);
-            console.log("nouveau cout:"+produit.cout)
+            //console.log("nouveau cout:"+produit.cout)
             //mettre à la puissance : math.pow()
 
             //maj du revenu
             produit.revenu = produit.revenu * produit.croissance * args.quantite
 
-            //sauvegarde le monde modifié
-            saveWorld(context);
-
             //MAJ
             context.world.lastupdate = Date.now();
 
             //MAJ des unlocks
-            unlocks(context)
+            lesUnlocks(context)
+
+            //sauvegarde le monde modifié
+            saveWorld(context);
 
             //return le produit
             return produit
@@ -202,6 +201,26 @@ module.exports = {
             saveWorld(context)      //appel de la fonction saveWorld
             return manager
             scoreMAJ(context)
+        },
+
+        acheterCashUpgrade(parent, args, context) {
+            scoreMAJ(context)
+            //trouve le nom de l'upgrade (nom de l'upgrade passé en paramètre = un des nom de l'upgrade de la liste ?)
+            let upgrade = context.world.upgrades.find(u => u.name === args.name)
+
+            //si pas trouvé -> erreur
+            if (upgrade === undefined) {
+                throw new Error(
+                    `Le upgrade avec le nom ${args.name} n'existe pas`)
+            }
+
+            // debloque l'amélioration upgrade = amélioration repérée à l aide du nom
+            context.world.upgrades.forEach(function(u) {
+                if (u == args.name) {
+                    u.unlocked = true;
+                }
+            }
+            )
         },
     }
 };
