@@ -1,5 +1,4 @@
 const { money } = require("./world");
-
 const fs=require("fs").promises
 
 //fonction qui réalise la sauvegarde du monde du joueur
@@ -216,11 +215,60 @@ module.exports = {
 
             // debloque l'amélioration upgrade = amélioration repérée à l aide du nom
             context.world.upgrades.forEach(function(u) {
-                if (u == args.name) {
+                if (u.name == args.name) {
                     u.unlocked = true;
                 }
             }
             )
+
+            saveWorld(context)      //appel de la fonction saveWorld
+            return upgrade
+        },
+
+        resetWorld(parent, args, context) {
+
+            //réinitialise base :
+            /*context.world.score += context.world.money;
+            context.world.money = 0;
+            context.world.totalangels += context.world.activeangels;
+            context.world.activeangels = 0;*/
+            // ! angelbonus !
+            /*context.world.lastupdate = 0;
+*/
+            //réinitialise produits :
+
+
+            /*return world;
+            */
+           /*
+            var nbAnges = context.world.activeangels + context.world.totalangels;
+            var nbScore = context.world.score + context.world.money;
+
+            fs.writeFile("userworlds/" + context.user + "-world.json", 
+            JSON.stringify(context.world), err => {
+                if (err) {
+                    console.error(err)
+                    throw new Error(
+                        `Erreur d'écriture du monde coté serveur`)
+                }
+            })
+
+            context.world.score = nbScore;
+            context.world.totalangels = nbAnges;
+*/
+        // sauvegarde de coté le score et nb total d'ange
+        var nbScore = context.world.score + context.world.money;
+        var nbAnges = 150 * (Math.sqrt(nbScore/Math.pow(10,15)))-context.world.totalangels;
+
+        // créer un nouveau monde
+        const { world } = require("./world");
+        context.world = world;
+
+        context.world.score = nbScore;
+        context.world.activeangels = nbAnges;
+
+        saveWorld(context);
+        return world;
         },
     }
 };
