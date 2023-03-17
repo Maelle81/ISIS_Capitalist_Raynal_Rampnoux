@@ -1,6 +1,7 @@
 const { money } = require("./world");
 const fs=require("fs").promises
 
+
 //fonction qui réalise la sauvegarde du monde du joueur
 //les places dans le dossier userworlds au nom nomDuJoueur+world.json
 function saveWorld(context) {
@@ -226,47 +227,20 @@ module.exports = {
         },
 
         resetWorld(parent, args, context) {
-
-            //réinitialise base :
-            /*context.world.score += context.world.money;
-            context.world.money = 0;
-            context.world.totalangels += context.world.activeangels;
-            context.world.activeangels = 0;*/
-            // ! angelbonus !
-            /*context.world.lastupdate = 0;
-*/
-            //réinitialise produits :
-
-
-            /*return world;
-            */
-           /*
-            var nbAnges = context.world.activeangels + context.world.totalangels;
-            var nbScore = context.world.score + context.world.money;
-
-            fs.writeFile("userworlds/" + context.user + "-world.json", 
-            JSON.stringify(context.world), err => {
-                if (err) {
-                    console.error(err)
-                    throw new Error(
-                        `Erreur d'écriture du monde coté serveur`)
-                }
-            })
-
-            context.world.score = nbScore;
-            context.world.totalangels = nbAnges;
-*/
+        
         // sauvegarde de coté le score et nb total d'ange
         var nbScore = context.world.score + context.world.money;
         var nbAnges = 150 * (Math.sqrt(nbScore/Math.pow(10,15)))-context.world.totalangels;
 
         // créer un nouveau monde
-        const { world } = require("./world");
+        let world = require("./world")
         context.world = world;
 
+        // implémente la sauvegare du score et du nombre d'ange total au nouveau monde
         context.world.score = nbScore;
         context.world.activeangels = nbAnges;
 
+        // sauvegarde le nouveau monde et le retourne
         saveWorld(context);
         return world;
         },
