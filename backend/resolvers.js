@@ -47,7 +47,12 @@ function scoreMAJ (context) {
                 }
             }
             //ajoute argent au jeu
-            context.world.money += nbExecution * p.revenu;
+            //context.world.money += nbExecution * p.revenu;
+            context.world.money += nbExecution * p.revenu * (1 + (context.world.activeangels * context.world.angelbonus / 100));
+        
+            // calcul des anges total
+            context.world.totalangels = 150 * (Math.sqrt(context.world.score/Math.pow(10,15)))-context.world.totalangels;
+
         }
     );
 }
@@ -231,6 +236,7 @@ module.exports = {
         // sauvegarde de coté le score et nb total d'ange
         var nbScore = context.world.score + context.world.money;
         var nbAnges = 150 * (Math.sqrt(nbScore/Math.pow(10,15)))-context.world.totalangels;
+        var nbActivAnges = context.world.activeangels;
 
         // créer un nouveau monde
         let world = require("./world")
@@ -239,10 +245,18 @@ module.exports = {
         // implémente la sauvegare du score et du nombre d'ange total au nouveau monde
         context.world.score = nbScore;
         context.world.activeangels = nbAnges;
+        context.world.activeangels = nbActivAnges;
 
         // sauvegarde le nouveau monde et le retourne
         saveWorld(context);
         return world;
+        },
+        acheterAngelUpgrade(parent, args, context) {
+            scoreMAJ(context)
+            
+
+            saveWorld(context)      //appel de la fonction saveWorld
+            return angelupgrades
         },
     }
 };

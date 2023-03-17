@@ -3,7 +3,7 @@ module.exports =
     "name": "ArtisticBusiness",
     "logo": "icones/logo.jpg",
     "money": 1,
-    "score": 10,
+    "score": 0,
     "totalangels": 0,
     "activeangels": 0,
     "angelbonus": 2,
