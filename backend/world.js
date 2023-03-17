@@ -351,12 +351,111 @@ module.exports =
         ],
     "upgrades": [
         {
-        "name": "Nom du premier upgrade",
-        "logo": "icones/premierupgrade.jpg",
+        "name": "Esquisse au gris : revenu x3",
+        "logo": "icones/drawing1.jpg",
         "seuil": 1e3,
         "idcible": 1,
         "ratio": 3,
         "typeratio": "gain",
+        "unlocked": false
+        },
+        {
+        "name": "Portrait au gris : revenu x3",
+        "logo": "icones/drawing2.jpg",
+        "seuil": 1.5e3,
+        "idcible": 1,
+        "ratio": 3,
+        "typeratio": "gain",
+        "unlocked": false
+        },
+        {
+        "name": "Esquisse en couleur : revenu x3",
+        "logo": "icones/drawing3.jpg",
+        "seuil": 2e3,
+        "idcible": 1,
+        "ratio": 3,
+        "typeratio": "gain",
+        "unlocked": false
+        },
+        {
+        "name": "Illustration en couleur : revenu x3",
+        "logo": "icones/drawing4.jpg",
+        "seuil": 2.5e3,
+        "idcible": 1,
+        "ratio": 3,
+        "typeratio": "gain",
+        "unlocked": false
+        },
+        {
+        "name": "Illustration professionnelle : revenu x3",
+        "logo": "icones/drawing5.jpg",
+        "seuil": 3e3,
+        "idcible": 1,
+        "ratio": 3,
+        "typeratio": "gain",
+        "unlocked": false
+        },
+        {
+        "name": "Portrait Professionnel : revenu x3",
+        "logo": "icones/drawing6.jpg",
+        "seuil": 4e3,
+        "idcible": 1,
+        "ratio": 3,
+        "typeratio": "gain",
+        "unlocked": false
+        },
+        {
+        "name": "Esquisse au gris : vitesse x3",
+        "logo": "icones/drawing1.jpg",
+        "seuil": 5e3,
+        "idcible": 1,
+        "ratio": 3,
+        "typeratio": "vitesse",
+        "unlocked": false
+        },
+        {
+        "name": "Portrait au gris : vitesse x3",
+        "logo": "icones/drawing2.jpg",
+        "seuil": 7e3,
+        "idcible": 1,
+        "ratio": 3,
+        "typeratio": "vitesse",
+        "unlocked": false
+        },
+        {
+        "name": "Esquisse en couleur : vitesse x3",
+        "logo": "icones/drawing3.jpg",
+        "seuil": 9e3,
+        "idcible": 1,
+        "ratio": 3,
+        "typeratio": "vitesse",
+        "unlocked": false
+        },
+        {
+        "name": "Illustration en couleur : vitesse x3",
+        "logo": "icones/drawing4.jpg",
+        "seuil": 12e3,
+        "idcible": 1,
+        "ratio": 3,
+        "typeratio": "vitesse",
+        "unlocked": false
+        },
+        {
+        "name": "Illustration professionnelle : vitesse x3",
+        "logo": "icones/drawing5.jpg",
+        "seuil": 15e3,
+        "idcible": 1,
+        "ratio": 3,
+        "typeratio": "vitesse",
+        "unlocked": false
+        },
+        {
+        "name": "Portrait Professionnel : vitesse x3",
+        "logo": "icones/drawing6.jpg",
+        "seuil": 19e3,
+        "idcible": 1,
+        "ratio": 3,
+        "typeratio": "vitesse",
         "unlocked": false
         },
         ],

@@ -1,5 +1,4 @@
 const { money } = require("./world");
-
 const fs=require("fs").promises
 
 //fonction qui réalise la sauvegarde du monde du joueur
@@ -51,7 +50,7 @@ function scoreMAJ (context) {
         }
     );
 }
-function unlocks (context) {
+function lesUnlocks (context) {
     //Pour tous les pallier : valeur de deblocquage
     var pallier0 = true;
     var pallier1 = true;
@@ -88,13 +87,12 @@ function unlocks (context) {
         else {
             var pallier3 = false;
         }
-    },
+    })
     //MAJ des allunlocks
-    context.world.allunlocks[0] = pallier0,
-    context.world.allunlocks[1] = pallier1,
-    context.world.allunlocks[2] = pallier2,
-    context.world.allunlocks[3] = pallier3,
-    )
+    context.world.allunlocks[0] = pallier0
+    context.world.allunlocks[1] = pallier1
+    context.world.allunlocks[2] = pallier2
+    context.world.allunlocks[3] = pallier3
 }
    
 // service GraphQL : resolveur
@@ -123,32 +121,32 @@ module.exports = {
 
             //incrémente la quantite
             produit.quantite = produit.quantite + args.quantite;
-            console.log("quantite:"+produit.quantite)
+            //console.log("quantite:"+produit.quantite)
 
             //calcule le pris de la somme des quantités qu'on achète
             let coutSommeAchat = ((1 - Math.pow(produit.croissance, args.quantite) )/(1-produit.croissance));
-            console.log("coutSommeAchat:"+coutSommeAchat)
+            //console.log("coutSommeAchat:"+coutSommeAchat)
 
             //déduit le cout d'achat de l'argent du monde
             context.world.money = context.world.money - coutSommeAchat;
-            console.log("money:"+context.world.money )
+            //console.log("money:"+context.world.money )
             
             //calcul la valeur du prochain cout
             produit.cout = produit.cout * Math.pow(produit.croissance, args.quantite);
-            console.log("nouveau cout:"+produit.cout)
+            //console.log("nouveau cout:"+produit.cout)
             //mettre à la puissance : math.pow()
 
             //maj du revenu
             produit.revenu = produit.revenu * produit.croissance * args.quantite
 
-            //sauvegarde le monde modifié
-            saveWorld(context);
-
             //MAJ
             context.world.lastupdate = Date.now();
 
             //MAJ des unlocks
-            unlocks(context)
+            lesUnlocks(context)
+
+            //sauvegarde le monde modifié
+            saveWorld(context);
 
             //return le produit
             return produit
@@ -202,6 +200,75 @@ module.exports = {
             saveWorld(context)      //appel de la fonction saveWorld
             return manager
             scoreMAJ(context)
+        },
+
+        acheterCashUpgrade(parent, args, context) {
+            scoreMAJ(context)
+            //trouve le nom de l'upgrade (nom de l'upgrade passé en paramètre = un des nom de l'upgrade de la liste ?)
+            let upgrade = context.world.upgrades.find(u => u.name === args.name)
+
+            //si pas trouvé -> erreur
+            if (upgrade === undefined) {
+                throw new Error(
+                    `Le upgrade avec le nom ${args.name} n'existe pas`)
+            }
+
+            // debloque l'amélioration upgrade = amélioration repérée à l aide du nom
+            context.world.upgrades.forEach(function(u) {
+                if (u.name == args.name) {
+                    u.unlocked = true;
+                }
+            }
+            )
+
+            saveWorld(context)      //appel de la fonction saveWorld
+            return upgrade
+        },
+
+        resetWorld(parent, args, context) {
+
+            //réinitialise base :
+            /*context.world.score += context.world.money;
+            context.world.money = 0;
+            context.world.totalangels += context.world.activeangels;
+            context.world.activeangels = 0;*/
+            // ! angelbonus !
+            /*context.world.lastupdate = 0;
+*/
+            //réinitialise produits :
+
+
+            /*return world;
+            */
+           /*
+            var nbAnges = context.world.activeangels + context.world.totalangels;
+            var nbScore = context.world.score + context.world.money;
+
+            fs.writeFile("userworlds/" + context.user + "-world.json", 
+            JSON.stringify(context.world), err => {
+                if (err) {
+                    console.error(err)
+                    throw new Error(
+                        `Erreur d'écriture du monde coté serveur`)
+                }
+            })
+
+            context.world.score = nbScore;
+            context.world.totalangels = nbAnges;
+*/
+        // sauvegarde de coté le score et nb total d'ange
+        var nbScore = context.world.score + context.world.money;
+        var nbAnges = 150 * (Math.sqrt(nbScore/Math.pow(10,15)))-context.world.totalangels;
+
+        // créer un nouveau monde
+        const { world } = require("./world");
+        context.world = world;
+
+        context.world.score = nbScore;
+        context.world.activeangels = nbAnges;
+
+        saveWorld(context);
+        return world;
         },
     }
 };
