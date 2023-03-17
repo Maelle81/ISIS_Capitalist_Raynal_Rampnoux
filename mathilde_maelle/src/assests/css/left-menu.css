@@ -17,3 +17,10 @@
     scrollbar-color: rebeccapurple green;
     scrollbar-width: thin;
 }
+
+
+.snackBar{
+    z-index: 100;
+    
+    
+}

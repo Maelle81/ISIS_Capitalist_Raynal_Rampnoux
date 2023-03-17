@@ -19,7 +19,7 @@ function scoreMAJ (context) {
     context.world.products.forEach(function(p) 
         { 
             //calcul tps écouléy
-            var tpsEcouler = Date.now() - context.world.lastupdate + tpsEcouler
+            var tpsEcouler = String.prototype.toString(Date.now()) - context.world.lastupdate + tpsEcouler
             var nbExecution = 0
 
             // si manager débloqué
@@ -50,6 +50,51 @@ function scoreMAJ (context) {
             context.world.money += nbExecution * p.revenu;
         }
     );
+}
+function unlocks (context) {
+    //Pour tous les pallier : valeur de deblocquage
+    var pallier0 = true;
+    var pallier1 = true;
+    var pallier2 = true;
+    var pallier3 = true;
+
+    //Pour chaque produit : 
+    context.world.products.forEach(function(p) 
+    {
+        // Valider les paliers celon la quantite
+        if (p.quantite >= 25) {
+            //si le produit est > 25, on valide le premier pallier
+            p.paliers[0].unlocked = true;
+        }
+        else {
+            //si un seul des produit est inférieur à 25, le pallier est invalidé (allunlocks)
+            var pallier0 = false;
+        }
+        if (p.quantite >= 50) {
+            p.paliers[1].unlocked = true;
+        }
+        else {
+            var pallier1 = false;
+        }
+        if (p.quantite >= 75) {
+            p.paliers[2].unlocked = true;
+        }
+        else {
+            var pallier2 = false;
+        }
+        if (p.quantite >= 100) {
+            p.paliers[3].unlocked = true;
+        }
+        else {
+            var pallier3 = false;
+        }
+    },
+    //MAJ des allunlocks
+    context.world.allunlocks[0] = pallier0,
+    context.world.allunlocks[1] = pallier1,
+    context.world.allunlocks[2] = pallier2,
+    context.world.allunlocks[3] = pallier3,
+    )
 }
    
 // service GraphQL : resolveur
@@ -93,14 +138,21 @@ module.exports = {
             console.log("nouveau cout:"+produit.cout)
             //mettre à la puissance : math.pow()
 
+            //maj du revenu
+            produit.revenu = produit.revenu * produit.croissance * args.quantite
+
             //sauvegarde le monde modifié
             saveWorld(context);
 
             //MAJ
             context.world.lastupdate = Date.now();
 
+            //MAJ des unlocks
+            unlocks(context)
+
             //return le produit
             return produit
+            scoreMAJ(context)
         },
 
         //chercher le produit du monde possédant l’identifiant passé en paramètre
@@ -123,6 +175,7 @@ module.exports = {
 
             saveWorld(context)      //appel de la fonction saveWorld
             return produit
+            scoreMAJ(context)
         },
 
         engagerManager(parent, args, context) {
@@ -148,6 +201,7 @@ module.exports = {
 
             saveWorld(context)      //appel de la fonction saveWorld
             return manager
+            scoreMAJ(context)
         },
     }
 };
