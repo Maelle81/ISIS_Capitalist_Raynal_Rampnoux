@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { gql, useQuery } from "@apollo/client";
+import { gql, useApolloClient, useQuery } from "@apollo/client";
 import Main from "./components/Main";
-import "./assests/css/style.css"
+import "./assests/css/style.css";
+import { ToastContainer } from "react-toastify";
+import {ThemeProvider } from "@mui/material/styles";
 
 const GET_WORLD = gql`
   query getWorld {
-    getWorld {
+    getWorld { 
       name
       logo
       score
@@ -66,10 +68,58 @@ const GET_WORLD = gql`
       }
     }
   }
-`
+`;
 
 function App() {
-  const [username, setUsername] = useState("");
+
+  
+  const client = useApolloClient();
+  //let world= require("./world")
+
+    let lusername = localStorage.getItem("username");
+    if (lusername === undefined) {
+      lusername = "Artiste " + Math.floor(Math.random() * 10000);
+      localStorage.setItem("username", lusername);
+    }
+    if (!lusername) lusername = ""
+     
+
+
+    const [username, setUsername] = useState(lusername)
+
+  const onUserNameChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
+
+    localStorage.setItem("username", event.currentTarget.value);
+    setUsername(event.currentTarget.value);
+    client.resetStore()
+    //console.log(event.currentTarget.value);
+
+  };
+  
+  const { loading, error, data, refetch } = useQuery(GET_WORLD, {
+    context: { headers: { "x-user": username } }
+  });
+
+  let corps = undefined
+  if (loading) corps = <div> Loading... </div>
+  else if (error) corps = <div> Erreur de chargement du monde ! </div>
+  else corps = <Main loadworld={data.getWorld} username={username} />
+
+  
+
+  // c la meme variable n ==> logarithme , U0= wordl.money, q0 ets le taux de croissance, 
+
+  return (
+    
+    <div>      
+      <div> Your ID : </div>
+      <input type="text" value={username} onChange={onUserNameChanged} />
+      {corps}           
+    </div>
+    
+  );
+  }
+  /*const [username, setUsername] = useState("");
 
   const [usernamechamp, setUsernamechamp] = useState("");
 
@@ -77,8 +127,8 @@ function App() {
     context: { headers: { "x-user": username } }
   });  
 
-  /*permet de valider son usrname avec un input button
-  et de le sauvegarder */
+  //permet de valider son usrname avec un input button
+  //et de le sauvegarder 
 
   useEffect(() => {
     let username = localStorage.getItem("username");
@@ -97,9 +147,7 @@ function App() {
   const onUserNameChanged = (event: any) => {
     setUsername(usernamechamp);
     localStorage.setItem("username", usernamechamp);
-  };
-
-  
+  };  
 
   let corps = undefined
   if (loading) corps = <div> Loading... </div>
@@ -124,6 +172,6 @@ function App() {
       </div>     
     </div>
   );
-}
+}*/
 
 export default App;

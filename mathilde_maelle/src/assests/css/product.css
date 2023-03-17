@@ -1,6 +1,9 @@
 body{
-    --main--color : red;
-    --second--color : #92e1e9;
+    --blue : #08d6ff;
+    --pink : #ff95f4;
+    --orange: #ffb99e;
+    --yellow: #fffb82;
+    --green: #adffeb;
     
 }
 
@@ -17,10 +20,49 @@ body{
 }
 
 .barstyle{
-    border-radius: 0 30px 30px 0;
-    height: 6em;
+    border-radius: 15px;
+    height: 3em;
+    width: 150px;
+    color: #ffb99e;
+    float:inline-start;
 }
 
 .product{
     padding:1em;
 }
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(150px, auto);
+    padding:1em;
+  }
+  .one {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .two {
+    grid-column: 1;
+    grid-row: 1 / 2;
+    border-radius: 15%;
+    text-align: center;
+  }
+  .three {
+    grid-column:2 / 4;
+    grid-row: 1;
+    
+  }
+  .four {
+    grid-column: 3;
+    grid-row: 2;
+    text-align:right ;
+    float:right;
+  }
+  .five {
+    grid-column: 4;
+    grid-row: 2;
+    text-align:right ;
+  }
+  
+  

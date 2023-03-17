@@ -18,7 +18,7 @@ type BarProps = {
 }
 
 export default function MyProgressbar({
-    vitesse, initialvalue = 0, className, run, frontcolor = "#008800", backcolor = "#FFFFFF", auto = false, onCompleted, orientation = Orientation.horizontal
+    vitesse, initialvalue = 0, className, run, frontcolor = "#008800", backcolor = "#ffb99e", auto = false, onCompleted, orientation = Orientation.horizontal
 }: BarProps) {
 
   const requestIdRef = useRef(0)

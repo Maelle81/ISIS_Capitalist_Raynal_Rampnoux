@@ -5,21 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
 
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
 const client = new ApolloClient({
-  //uri: 'http://localhost:4000/graphql',
-  uri:'https://isiscapitalistgraphql.kk.kurasawa.fr/graphql',
+  uri: 'http://localhost:4000/graphql',
+  //uri:'https://isiscapitalistgraphql.kk.kurasawa.fr/graphql',
   cache: new InMemoryCache()
 });
 
 root.render(
   <React.StrictMode>
       <ApolloProvider client={client}>
-    <App />
+    <App/>
       </ApolloProvider>
   </React.StrictMode>
 );
