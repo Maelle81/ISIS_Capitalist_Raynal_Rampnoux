@@ -23,7 +23,7 @@ module.exports =
         "paliers": [
             {
             "name": "Prix de vente d'une Esquisse au gris x1.5",
-            "logo": "icones/premierpalier.jpg",
+            "logo": "icones/drawing1.png",
             "seuil": 25,
             "idcible": 1,
             "ratio": 1.5,
@@ -32,7 +32,7 @@ module.exports =
             },
             {
             "name": "Prix de vente d'une Esquisse au gris x2",
-            "logo": "icones/deuxiemepalier.jpg",
+            "logo": "icones/drawing1.png",
             "seuil": 50,
             "idcible": 1,
             "ratio": 2,
@@ -41,7 +41,7 @@ module.exports =
             },
             {
             "name": "Prix de vente d'une Esquisse au gris x2",
-            "logo": "icones/deuxiemepalier.jpg",
+            "logo": "icones/drawing1.png",
             "seuil": 75,
             "idcible": 1,
             "ratio": 2,
@@ -50,7 +50,7 @@ module.exports =
             },
             {
             "name": "Prix de vente d'une Esquisse au gris x3",
-            "logo": "icones/deuxiemepalier.jpg",
+            "logo": "icones/drawing1.png",
             "seuil": 100,
             "idcible": 1,
             "ratio": 3,
@@ -73,7 +73,7 @@ module.exports =
         "paliers": [
             {
             "name": "Vitesse de production d'un Portait au gris x1.5",
-            "logo": "icones/premierpalier.jpg",
+            "logo": "icones/drawing2.png",
             "seuil": 25,
             "idcible": 2,
             "ratio": 1.5,
@@ -82,7 +82,7 @@ module.exports =
             },
             {
             "name": "Vitesse de production d'un Portait au gris x2",
-            "logo": "icones/deuxiemepalier.jpg",
+            "logo": "icones/drawing2.png",
             "seuil": 50,
             "idcible": 2,
             "ratio": 2,
@@ -91,7 +91,7 @@ module.exports =
             },
             {
             "name": "Vitesse de production d'un Portait au gris x2",
-            "logo": "icones/deuxiemepalier.jpg",
+            "logo": "icones/drawing2.png",
             "seuil": 75,
             "idcible": 2,
             "ratio": 2,
@@ -100,7 +100,7 @@ module.exports =
             },
             {
             "name": "Vitesse de production d'un Portait au gris x3",
-            "logo": "icones/deuxiemepalier.jpg",
+            "logo": "icones/drawing2.png",
             "seuil": 100,
             "idcible": 2,
             "ratio": 3,
@@ -123,7 +123,7 @@ module.exports =
         "paliers": [
             {
             "name": "Vitesse de production d'une Esquisse en couleur x1.5",
-            "logo": "icones/premierpalier.jpg",
+            "logo": "icones/drawing3.png",
             "seuil": 25,
             "idcible": 3,
             "ratio": 1.5,
@@ -132,7 +132,7 @@ module.exports =
             },
             {
             "name": "Vitesse de production d'une Esquisse en couleur x2",
-            "logo": "icones/deuxiemepalier.jpg",
+            "logo": "icones/drawing3.png",
             "seuil": 50,
             "idcible": 3,
             "ratio": 2,
@@ -141,7 +141,7 @@ module.exports =
             },
             {
             "name": "Vitesse de production d'une Esquisse en couleur x2",
-            "logo": "icones/deuxiemepalier.jpg",
+            "logo": "icones/drawing3.png",
             "seuil": 75,
             "idcible": 3,
             "ratio": 2,
@@ -150,7 +150,7 @@ module.exports =
             },
             {
             "name": "Vitesse de production d'une Esquisse en couleur x3",
-            "logo": "icones/deuxiemepalier.jpg",
+            "logo": "icones/drawing3.png",
             "seuil": 100,
             "idcible": 3,
             "ratio": 3,
@@ -173,7 +173,7 @@ module.exports =
         "paliers": [
             {
             "name": "Vitesse de production d'une Illustration en couleur x1.5",
-            "logo": "icones/premierpalier.jpg",
+            "logo": "icones/drawing4.png",
             "seuil": 25,
             "idcible": 4,
             "ratio": 1.5,
@@ -182,7 +182,7 @@ module.exports =
             },
             {
             "name": "Vitesse de production d'une Illustration en couleur x2",
-            "logo": "icones/deuxiemepalier.jpg",
+            "logo": "icones/drawing4.png",
             "seuil": 50,
             "idcible": 4,
             "ratio": 2,
@@ -191,7 +191,7 @@ module.exports =
             },
             {
             "name": "Vitesse de production d'une Illustration en couleur x2",
-            "logo": "icones/deuxiemepalier.jpg",
+            "logo": "icones/drawing4.png",
             "seuil": 75,
             "idcible": 4,
             "ratio": 2,
@@ -200,7 +200,7 @@ module.exports =
             },
             {
             "name": "Vitesse de production d'une Illustration en couleur x3",
-            "logo": "icones/deuxiemepalier.jpg",
+            "logo": "icones/drawing4.png",
             "seuil": 100,
             "idcible": 4,
             "ratio": 3,
@@ -223,7 +223,7 @@ module.exports =
         "paliers": [
             {
             "name": "Vitesse de production d'une Illustration Professionnelle x1.5",
-            "logo": "icones/premierpalier.jpg",
+            "logo": "icones/drawing5.png",
             "seuil": 25,
             "idcible": 5,
             "ratio": 1.5,
@@ -232,7 +232,7 @@ module.exports =
             },
             {
             "name": "Vitesse de production d'une Illustration Professionnelle x2",
-            "logo": "icones/deuxiemepalier.jpg",
+            "logo": "icones/drawing5.png",
             "seuil": 50,
             "idcible": 5,
             "ratio": 2,
@@ -241,7 +241,7 @@ module.exports =
             },
             {
             "name": "Vitesse de production d'une Illustration Professionnelle x2",
-            "logo": "icones/deuxiemepalier.jpg",
+            "logo": "icones/drawing5.png",
             "seuil": 75,
             "idcible": 5,
             "ratio": 2,
@@ -250,7 +250,7 @@ module.exports =
             },
             {
             "name": "Vitesse de production d'une Illustration Professionnelle x3",
-            "logo": "icones/deuxiemepalier.jpg",
+            "logo": "icones/drawing5.png",
             "seuil": 100,
             "idcible": 5,
             "ratio": 3,
@@ -273,7 +273,7 @@ module.exports =
         "paliers": [
             {
             "name": "Vitesse de production d'un Portait Professionnel x1.5",
-            "logo": "icones/premierpalier.jpg",
+            "logo": "icones/drawing6.png",
             "seuil": 25,
             "idcible": 6,
             "ratio": 1.5,
@@ -282,7 +282,7 @@ module.exports =
             },
             {
             "name": "Vitesse de production d'un Portait Professionnel x2",
-            "logo": "icones/deuxiemepalier.jpg",
+            "logo": "icones/drawing6.png",
             "seuil": 50,
             "idcible": 6,
             "ratio": 2,
@@ -291,7 +291,7 @@ module.exports =
             },
             {
             "name": "Vitesse de production d'un Portait Professionnel x2",
-            "logo": "icones/deuxiemepalier.jpg",
+            "logo": "icones/drawing6.png",
             "seuil": 75,
             "idcible": 6,
             "ratio": 2,
@@ -300,7 +300,7 @@ module.exports =
             },
             {
             "name": "Vitesse de production d'un Portait Professionnel x3",
-            "logo": "icones/deuxiemepalier.jpg",
+            "logo": "icones/drawing6.png",
             "seuil": 100,
             "idcible": 6,
             "ratio": 3,
@@ -314,7 +314,7 @@ module.exports =
     "allunlocks": [
         {
         "name": "Tous les produits : revenu x2",
-        "logo": "icones/premierunlock.jpg",
+        "logo": "icones/logo.jpg",
         "seuil": 25,
         "idcible": 0,
         "ratio": 2,
@@ -323,7 +323,7 @@ module.exports =
         },
         {
         "name": "Tous les produits : revenu x3",
-        "logo": "icones/premierunlock.jpg",
+        "logo": "icones/logo.jpg",
         "seuil": 50,
         "idcible": 0,
         "ratio": 3,
@@ -332,7 +332,7 @@ module.exports =
         },
         {
         "name": "Tous les produits : revenu x4",
-        "logo": "icones/premierunlock.jpg",
+        "logo": "icones/logo.jpg",
         "seuil": 75,
         "idcible": 0,
         "ratio": 4,
@@ -341,7 +341,7 @@ module.exports =
         },
         {
         "name": "Tous les produits : revenu x5",
-        "logo": "icones/premierunlock.jpg",
+        "logo": "icones/logo.jpg",
         "seuil": 100,
         "idcible": 0,
         "ratio": 5,
@@ -462,7 +462,7 @@ module.exports =
     "angelupgrades": [
         {
         "name": "Sacrifice d'ange : tous les profits x3",
-        "logo": "icones/angel.png",
+        "logo": "icones/ange.jpg",
         "seuil": 10,
         "idcible": 0,
         "ratio": 3,
@@ -471,7 +471,7 @@ module.exports =
         },
         {
         "name": "Rebellion d'ange : nombre d'ange +2%",
-        "logo": "icones/angel.png",
+        "logo": "icones/ange.jpg",
         "seuil": 40,
         "idcible": 0,
         "ratio": 2,
@@ -480,7 +480,7 @@ module.exports =
         },
         {
         "name": "Selection d'ange : tous les profits x5",
-        "logo": "icones/angel.png",
+        "logo": "icones/ange.jpg",
         "seuil": 100,
         "idcible": 0,
         "ratio": 5,
