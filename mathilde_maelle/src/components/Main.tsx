@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react"
-import { ToastContainer } from "react-toastify"
-import { geometricSum, transform } from "../util"
 import { Palier, Product, World } from "../world"
 import Header from "./Header"
 import LeftMenu from "./LeftMenu"
 import ProductComponent from "./ProductComponent"
 import "../assests/css/style.css";
 import { gql, useMutation } from "@apollo/client"
-import { updateGetAccessor } from "typescript"
 
 type MainProps = {
     loadworld: World
