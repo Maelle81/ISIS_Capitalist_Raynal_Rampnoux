@@ -227,6 +227,9 @@ module.exports = {
             }
             )
 
+            //MAJ
+            context.world.lastupdate = Date.now();
+
             saveWorld(context)      //appel de la fonction saveWorld
             return upgrade
         },
@@ -253,8 +256,24 @@ module.exports = {
         },
         acheterAngelUpgrade(parent, args, context) {
             scoreMAJ(context)
-            
 
+            let angels = context.world.angelupgrades.find(a => a.name === args.name)
+
+            //si pas trouvé -> erreur
+            if (angels === undefined) {
+                throw new Error(
+                    `Le ange avec le nom ${args.name} n'existe pas`)
+            }
+
+            context.world.angelupgrades.forEach(function(a) {
+                if (a.name == args.name) {
+                    a.unlocked = true;
+                }
+            }
+            )
+            //MAJ
+            context.world.lastupdate = Date.now();
+            
             saveWorld(context)      //appel de la fonction saveWorld
             return angelupgrades
         },
