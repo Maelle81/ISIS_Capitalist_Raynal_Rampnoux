@@ -21,7 +21,9 @@ export default function Main({loadworld, username, onUserNameChanged } : MainPro
     const [nbQuantity, setnbQuantity] = useState(1)
     const [productQuantities, setProductQuantities] = useState<number[]>(world.products.map(p => p.quantite));
     const [snackBar, setsnackBar]=useState(false)  
+    const [snackBarUpg, setsnackBarUpg]=useState(false)  
 
+    
     const ACHETER_QT_PRODUIT = gql`
         mutation acheterQtProduit($id:Int!, $quantite:Int!){
             acheterQtProduit(id:$id, quantite : $quantite){
@@ -150,7 +152,6 @@ export default function Main({loadworld, username, onUserNameChanged } : MainPro
                     if (upgrade.typeratio =="vitesse"){
                         product.vitesse /= upgrade.ratio
                     }
-                    //return product
                     }
                 )
             }else{
@@ -162,21 +163,21 @@ export default function Main({loadworld, username, onUserNameChanged } : MainPro
                     if (upgrade.typeratio =="vitesse"){
                         product.vitesse /= upgrade.ratio
                     }
-                    //return product
                 }
             }
-            setsnackBar(true)  
+            setsnackBarUpg(true)  
             setWorld({...world})
         }
       }
 
     return(
         <div className="app">  
-            <div> Your ID : </div>
-            <input type="text" value={username} onChange={onUserNameChanged} />         
+            {/*<div> Your ID : </div>
+            <input type="text" value={username} onChange={onUserNameChanged} /> */}        
             <Header username={username} qtmulti={qtmulti} positionButton={positionButton} loadworld={loadworld} money={money}/>            
             <div className="main">                
                 <LeftMenu  setsnackBar={setsnackBar} snackBar={snackBar}
+                setsnackBarUpg={setsnackBarUpg} snackBarUpg={snackBarUpg}
                 hireManager={hireManager} username={username}
                 loadworld={loadworld} money={money}
                 updateWorld={(world)=> setWorld({...world})} 

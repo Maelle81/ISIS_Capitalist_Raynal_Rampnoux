@@ -46,15 +46,15 @@ export default function Manager({ setsnackBar,snackBar,hireManager, setMoney,wor
       {showManagers &&(
       <div className="scroller">       
       <div>
-        <h1 className="title">Managers make you feel better !</h1>
+        <h1 className="title">Managers make you feel better ! 😉</h1>
       </div>
-      <div>
+      <div >
         {
           world.managers
             .filter((manager) => !manager.unlocked)
             //manager.unlocked !== true
             .map((manager) => (
-              <div key={manager.idcible} className="managergrid">
+              <div key={manager.idcible} className="grid">
                 <div>
                   <div className="logo">
                     <img
@@ -64,14 +64,14 @@ export default function Manager({ setsnackBar,snackBar,hireManager, setMoney,wor
                     />
                   </div>
                 </div>
-                <div className="infosmanager">
-                  <div className="managername"> {manager.name} </div>
-                  <div className="managercible">
+                <div className="infos">
+                  <div className="name"> {manager.name} </div>
+                  <div className="cible">
                     {world.products[manager.idcible - 1].name}
                   </div>
-                  <div className="managercost"> {manager.seuil} </div>
+                  <div className="cost"> {manager.seuil} </div>
                 </div>
-                <div>
+                <div className="button">
                   <Button
                   onClick={() => hireManager(manager)} 
                   disabled={money < manager.seuil }
@@ -94,11 +94,10 @@ export default function Manager({ setsnackBar,snackBar,hireManager, setMoney,wor
       className="snackBar"
       open={snackBar}
       autoHideDuration={3000}
-      onClose={()=> setsnackBar(false)}
-     
+      onClose={()=> setsnackBar(false)}     
       >
         <Alert severity="info" sx={{width:'100%'}}>
-          Le manager vient d'être d'embauché !
+        ✨Le manager vient d'être d'embauché !✨
         </Alert>
     </Snackbar>
       

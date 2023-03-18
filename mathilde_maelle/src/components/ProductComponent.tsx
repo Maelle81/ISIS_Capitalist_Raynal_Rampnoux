@@ -33,7 +33,7 @@ export default function ProductComponent({
   const [timeleft, setTimeLeft] = useState(product.timeleft);
   const lastupdate = useRef(Date.now());
   const [progression, setProgression] = useState(0);
-
+  
   const LANCER_PRODUCTION = gql`
     mutation lancerProductionProduit($id: Int!) {
       lancerProductionProduit(id: $id) {

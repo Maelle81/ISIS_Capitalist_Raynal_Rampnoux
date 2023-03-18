@@ -39,7 +39,7 @@ export default function Unlock({
   function getUnlock(){
     let unlocks =[]
     let paliers = world.products.flatMap(product=>product.paliers)
-
+    let allunlock =0
     world.products.forEach(product=>{
       if(showUnlock){
         paliers.forEach(palier =>{
@@ -47,6 +47,11 @@ export default function Unlock({
             unlocks.push(palier)
           }}          
         )
+      }else{
+        /*
+        allunlock=world.allunlocks.find(unlock => !unlock.unlocked)
+        if(allunlock) unlocks.push(allunlock)
+        */
       }
     })
 
@@ -70,7 +75,7 @@ export default function Unlock({
           <div>
             <h1 className="title">Unlocks !</h1>
           </div>
-          <div>
+          <div className="object">
             {
               world.allunlocks
                 .filter((allunlock) => !allunlock.unlocked)
@@ -80,7 +85,7 @@ export default function Unlock({
                     <div>
                       <div className="logo">
                         <img
-                          alt=" logo"
+                          //alt=" logo"
                           className="round"
                           src={url + allunlock.logo}
                         />
@@ -101,6 +106,7 @@ export default function Unlock({
           </div>
         </div>
       )}
+      {/*
       <Snackbar
         className="snackBar"
         open={snackBar}
@@ -110,7 +116,7 @@ export default function Unlock({
         <Alert severity="info" sx={{ width: "100%" }}>
           L'unlock a été débloqué !
         </Alert>
-      </Snackbar>
+      </Snackbar>*/}
     </div>
   );
 }

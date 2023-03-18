@@ -1,0 +1,32 @@
+.body{
+    --blue : #08d6ff;
+    --pink : #ff95f4;
+    --orange: #ffb99e;
+    --yellow: #fffb82;
+    --green: #95fde3;
+    
+}
+
+.header{
+    background-color: #08d6ff;
+    padding-top: 10px;
+}
+
+.header .button {
+    flex: 0 0 auto;
+    background-color: var(--green);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    opacity: 0.8;
+    margin-bottom: 10px;
+  }
+  
+.header .button:hover {
+    background-color: var(--yellow);
+}

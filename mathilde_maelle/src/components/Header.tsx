@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { transform } from "../util";
 import { World } from "../world";
 //import Typography from "@mui/material/Typography";
+import  "../assests/css/header.css";
 import Button from "@mui/material/Button";
 
 type HeaderProps = {
@@ -37,7 +38,7 @@ export default function Header({ username, qtmulti, loadworld, positionButton, m
         <Box>
             <Typography>{username}</Typography>
             <Typography dangerouslySetInnerHTML={{ __html: transform(money) }}></Typography>
-            <Button onClick={positionButton}  variant="contained" >{qtmulti}</Button>
+            <Button className="button" onClick={positionButton}  variant="contained" >{qtmulti}</Button>
         </Box>       
         
       </Toolbar>

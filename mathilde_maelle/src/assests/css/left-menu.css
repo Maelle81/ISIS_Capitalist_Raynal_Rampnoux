@@ -1,26 +1,106 @@
+body {
+  --blue: #08d6ff;
+  --pink: #ff95f4;
+  --orange: #ffb99e;
+  --yellow: #fffb82;
+  --green: #adffeb;
+}
+
 .modal {
-    position: fixed; /* reste en place */
-    z-index: 2; /* au dessus du reste */
-    width: 800px; /* largeur */
-    height: 600px; /* hauteur */
-    overflow: auto; /* barre de scroll si besoin */
-    background-color: white; /* opaque */
-    border: solid;
-    top:10%; /* a 10% du haut */
-    left:20%; /* a 20% de la gauche */
+  position: fixed; /* reste en place */
+  z-index: 2; /* au dessus du reste */
+  width: 600px; /* largeur */
+  height: 600px; /* hauteur */
+  overflow: auto; /* barre de scroll si besoin */
+  background-color: white; /* opaque */
+  border-radius: 15px;
+  top: 10%; /* a 10% du haut */
+  left: 30%; /* a 20% de la gauche */
 }
 
 .scroller {
-    width: 800px;
-    height: 600px;
-    overflow-y: scroll;
-    scrollbar-color: rebeccapurple green;
-    scrollbar-width: thin;
+  width: 600px;
+  height: 600px;
+  overflow-y: scroll;
+  scrollbar-color: var(--green) var(--blue);
+  scrollbar-width: thin;
 }
 
+.snackBar {
+  z-index: 100;
+}
 
-.snackBar{
-    z-index: 100;
-    
-    
+.leftmenu {
+  padding: 10px;
+  justify-content: flex-start;
+  /*height: 550px;
+   
+    width: 200px;
+    background-color: #cccccc91;
+    box-shadow: 2px 2px 5px gray;*/
+}
+
+.leftmenu .button {
+  flex: 0 0 auto;
+  background-color: var(--orange);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.leftmenu .button:hover {
+  background-color: var(--yellow);
+}
+
+.title {
+  text-align: center;
+}
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.logo {
+  flex: 0 0 auto;
+  margin-left: 10px;
+  margin-right: 1rem;
+}
+
+.infos {
+  flex: 1 1 auto;
+  margin-right: 1rem;
+  text-align: center;
+}
+
+.hire-button {
+  flex: 0 0 auto;
+  margin-left: 10px;
+}
+
+.leftmenu .closebutton {
+  margin-right: 20px;
+  background-color: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.leftmenu .closebutton:hover {
+  background-color: var(--yellow);
 }

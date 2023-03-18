@@ -15,12 +15,16 @@ type LeftMenuProps = {
   hireManager: (manager: Palier) => void;
   setsnackBar: (snackBar: boolean) => void;
   snackBar: boolean;
+  setsnackBarUpg: (snackBarUpg: boolean) => void;
+  snackBarUpg: boolean;
   buyCashUpgrade: (upgrade: Palier) => void;
 };
 
 export default function LeftMenu({
   setsnackBar,
   snackBar,
+  setsnackBarUpg,
+  snackBarUpg,
   hireManager,
   username,
   loadworld,
@@ -62,14 +66,15 @@ export default function LeftMenu({
   */
 
   return (
-    <div>
-      <div>
+    <div className="leftmenu">
+      <div >
         {/*
         <Badge badgeContent={nbUnlockMangers} color="secondary">*/}
-        <button onClick={()=>setShowManagers(true)}>Managers</button>
+        <button className="button" onClick={()=>setShowManagers(true)}>Managers</button>
         {/*</Badge> */}
         {showManagers && (
           <Manager
+            
             setsnackBar={setsnackBar}
             snackBar={snackBar}
             hireManager={hireManager}
@@ -82,9 +87,9 @@ export default function LeftMenu({
           ></Manager>
         )}
       </div>
-      <div>
+      <div >
         {/*<Badge badgeContent={nbUnlockMangers} color="secondary">*/}
-        <button onClick={()=>setShowUnlocks(true)}>Unlocks</button>
+        <button className="button" onClick={()=>setShowUnlocks(true)}>Unlocks</button>
         {/*</Badge> */}
         {showUnlocks && (
           <Unlock
@@ -100,14 +105,14 @@ export default function LeftMenu({
           ></Unlock>
         )}
       </div>
-      <div>
+      <div  >
         {/*<Badge badgeContent={nbUnlockMangers} color="secondary">*/}
-        <button onClick={()=>setShowUpgrades(true)}>Cash Upgrades</button>
+        <button className="button" onClick={()=>setShowUpgrades(true)}>Cash Upgrades</button>
         {/*</Badge> */}
         {showUpgrades && (
           <Upgrade
-            setsnackBar={setsnackBar}
-            snackBar={snackBar}
+            setsnackBar={setsnackBarUpg}
+            snackBar={snackBarUpg}
             setMoney={setMoney}
             world={world}
             updateWorld={updateWorld}

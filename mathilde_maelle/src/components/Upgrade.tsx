@@ -46,19 +46,18 @@ export default function Upgrade({
       {show && (
         <div className="scroller">
           <div>
-            <h1 className="title">Cash Upgrades !</h1>
+            <h1 className="title">Cash Upgrades ! 💶</h1>
           </div>
-          <div>
+          <div className="object">
             {
               world.upgrades
                 .filter((upgrade) => !upgrade.unlocked)
-                //.unlocked !== true
                 .map((upgrade) => (
                     <div key={upgrade.idcible} className="grid">
                     <div>
                       <div className="logo">
                         <img
-                          alt=" logo"
+                          //alt="logo"
                           className="round"
                           src={url + upgrade.logo}
                         />
@@ -73,10 +72,11 @@ export default function Upgrade({
                     </div>
                     <div>
                       <Button
+                      className="button"
                       onClick={() => (buyCashUpgrade(upgrade))} 
                       disabled={money < upgrade.seuil }
                       //|| world.products[.idcible-1].quantite <=0
-                      >Hire !</Button>
+                      >Buy !</Button>
                     </div>
                   </div>
                 ))
@@ -95,7 +95,7 @@ export default function Upgrade({
         onClose={() => setsnackBar(false)}
       >
         <Alert severity="info" sx={{ width: "100%" }}>
-        L'upgrade a été debloqué !
+        ✨L'upgrade a été debloqué !✨
         </Alert>
       </Snackbar>
     </div>

@@ -123,10 +123,10 @@ function App() {
   // c la meme variable n ==> logarithme , U0= wordl.money, q0 ets le taux de croissance, 
 
   return (
-    
+ 
     <div>      
-      <div> Your ID : </div>
-      <input type="text" value={username} onChange={onUserNameChanged} />
+       {/*<div> Your ID : </div>
+      <input type="text" value={username} onChange={onUserNameChanged} />*/}
       {corps}           
     </div>
     
