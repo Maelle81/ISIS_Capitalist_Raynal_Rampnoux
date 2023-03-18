@@ -26,7 +26,7 @@ module.exports =
             "logo": "icones/premierpalier.jpg",
             "seuil": 25,
             "idcible": 1,
-            "ratio": 2.5,
+            "ratio": 1.5,
             "typeratio": "vitesse",
             "unlocked": false
             },
@@ -34,8 +34,8 @@ module.exports =
             "name": "Prix de vente d'une Esquisse au gris x2",
             "logo": "icones/deuxiemepalier.jpg",
             "seuil": 50,
-            "idcible": 2,
-            "ratio": 3,
+            "idcible": 1,
+            "ratio": 2,
             "typeratio": "vitesse",
             "unlocked": false
             },
@@ -43,8 +43,8 @@ module.exports =
             "name": "Prix de vente d'une Esquisse au gris x2",
             "logo": "icones/deuxiemepalier.jpg",
             "seuil": 75,
-            "idcible": 2,
-            "ratio": 4,
+            "idcible": 1,
+            "ratio": 2,
             "typeratio": "vitesse",
             "unlocked": false
             },
@@ -52,8 +52,8 @@ module.exports =
             "name": "Prix de vente d'une Esquisse au gris x3",
             "logo": "icones/deuxiemepalier.jpg",
             "seuil": 100,
-            "idcible": 3,
-            "ratio": 5,
+            "idcible": 1,
+            "ratio": 3,
             "typeratio": "vitesse",
             "unlocked": false
             }
@@ -75,7 +75,7 @@ module.exports =
             "name": "Vitesse de production d'un Portait au gris x1.5",
             "logo": "icones/premierpalier.jpg",
             "seuil": 25,
-            "idcible": 1,
+            "idcible": 2,
             "ratio": 1.5,
             "typeratio": "vitesse",
             "unlocked": false
@@ -84,7 +84,7 @@ module.exports =
             "name": "Vitesse de production d'un Portait au gris x2",
             "logo": "icones/deuxiemepalier.jpg",
             "seuil": 50,
-            "idcible": 1,
+            "idcible": 2,
             "ratio": 2,
             "typeratio": "vitesse",
             "unlocked": false
@@ -93,7 +93,7 @@ module.exports =
             "name": "Vitesse de production d'un Portait au gris x2",
             "logo": "icones/deuxiemepalier.jpg",
             "seuil": 75,
-            "idcible": 1,
+            "idcible": 2,
             "ratio": 2,
             "typeratio": "vitesse",
             "unlocked": false
@@ -102,7 +102,7 @@ module.exports =
             "name": "Vitesse de production d'un Portait au gris x3",
             "logo": "icones/deuxiemepalier.jpg",
             "seuil": 100,
-            "idcible": 1,
+            "idcible": 2,
             "ratio": 3,
             "typeratio": "vitesse",
             "unlocked": false
@@ -125,7 +125,7 @@ module.exports =
             "name": "Vitesse de production d'une Esquisse en couleur x1.5",
             "logo": "icones/premierpalier.jpg",
             "seuil": 25,
-            "idcible": 1,
+            "idcible": 3,
             "ratio": 1.5,
             "typeratio": "vitesse",
             "unlocked": false
@@ -134,7 +134,7 @@ module.exports =
             "name": "Vitesse de production d'une Esquisse en couleur x2",
             "logo": "icones/deuxiemepalier.jpg",
             "seuil": 50,
-            "idcible": 1,
+            "idcible": 3,
             "ratio": 2,
             "typeratio": "vitesse",
             "unlocked": false
@@ -143,7 +143,7 @@ module.exports =
             "name": "Vitesse de production d'une Esquisse en couleur x2",
             "logo": "icones/deuxiemepalier.jpg",
             "seuil": 75,
-            "idcible": 1,
+            "idcible": 3,
             "ratio": 2,
             "typeratio": "vitesse",
             "unlocked": false
@@ -152,7 +152,7 @@ module.exports =
             "name": "Vitesse de production d'une Esquisse en couleur x3",
             "logo": "icones/deuxiemepalier.jpg",
             "seuil": 100,
-            "idcible": 1,
+            "idcible": 3,
             "ratio": 3,
             "typeratio": "vitesse",
             "unlocked": false
@@ -175,7 +175,7 @@ module.exports =
             "name": "Vitesse de production d'une Illustration en couleur x1.5",
             "logo": "icones/premierpalier.jpg",
             "seuil": 25,
-            "idcible": 1,
+            "idcible": 4,
             "ratio": 1.5,
             "typeratio": "vitesse",
             "unlocked": false
@@ -184,7 +184,7 @@ module.exports =
             "name": "Vitesse de production d'une Illustration en couleur x2",
             "logo": "icones/deuxiemepalier.jpg",
             "seuil": 50,
-            "idcible": 1,
+            "idcible": 4,
             "ratio": 2,
             "typeratio": "vitesse",
             "unlocked": false
@@ -193,7 +193,7 @@ module.exports =
             "name": "Vitesse de production d'une Illustration en couleur x2",
             "logo": "icones/deuxiemepalier.jpg",
             "seuil": 75,
-            "idcible": 1,
+            "idcible": 4,
             "ratio": 2,
             "typeratio": "vitesse",
             "unlocked": false
@@ -202,7 +202,7 @@ module.exports =
             "name": "Vitesse de production d'une Illustration en couleur x3",
             "logo": "icones/deuxiemepalier.jpg",
             "seuil": 100,
-            "idcible": 1,
+            "idcible": 4,
             "ratio": 3,
             "typeratio": "vitesse",
             "unlocked": false
@@ -225,7 +225,7 @@ module.exports =
             "name": "Vitesse de production d'une Illustration Professionnelle x1.5",
             "logo": "icones/premierpalier.jpg",
             "seuil": 25,
-            "idcible": 1,
+            "idcible": 5,
             "ratio": 1.5,
             "typeratio": "vitesse",
             "unlocked": false
@@ -234,7 +234,7 @@ module.exports =
             "name": "Vitesse de production d'une Illustration Professionnelle x2",
             "logo": "icones/deuxiemepalier.jpg",
             "seuil": 50,
-            "idcible": 1,
+            "idcible": 5,
             "ratio": 2,
             "typeratio": "vitesse",
             "unlocked": false
@@ -243,7 +243,7 @@ module.exports =
             "name": "Vitesse de production d'une Illustration Professionnelle x2",
             "logo": "icones/deuxiemepalier.jpg",
             "seuil": 75,
-            "idcible": 1,
+            "idcible": 5,
             "ratio": 2,
             "typeratio": "vitesse",
             "unlocked": false
@@ -252,7 +252,7 @@ module.exports =
             "name": "Vitesse de production d'une Illustration Professionnelle x3",
             "logo": "icones/deuxiemepalier.jpg",
             "seuil": 100,
-            "idcible": 1,
+            "idcible": 5,
             "ratio": 3,
             "typeratio": "vitesse",
             "unlocked": false
@@ -275,7 +275,7 @@ module.exports =
             "name": "Vitesse de production d'un Portait Professionnel x1.5",
             "logo": "icones/premierpalier.jpg",
             "seuil": 25,
-            "idcible": 1,
+            "idcible": 6,
             "ratio": 1.5,
             "typeratio": "vitesse",
             "unlocked": false
@@ -284,7 +284,7 @@ module.exports =
             "name": "Vitesse de production d'un Portait Professionnel x2",
             "logo": "icones/deuxiemepalier.jpg",
             "seuil": 50,
-            "idcible": 1,
+            "idcible": 6,
             "ratio": 2,
             "typeratio": "vitesse",
             "unlocked": false
@@ -293,7 +293,7 @@ module.exports =
             "name": "Vitesse de production d'un Portait Professionnel x2",
             "logo": "icones/deuxiemepalier.jpg",
             "seuil": 75,
-            "idcible": 1,
+            "idcible": 6,
             "ratio": 2,
             "typeratio": "vitesse",
             "unlocked": false
@@ -302,7 +302,7 @@ module.exports =
             "name": "Vitesse de production d'un Portait Professionnel x3",
             "logo": "icones/deuxiemepalier.jpg",
             "seuil": 100,
-            "idcible": 1,
+            "idcible": 6,
             "ratio": 3,
             "typeratio": "vitesse",
             "unlocked": false
@@ -363,7 +363,7 @@ module.exports =
         "name": "Portrait au gris : revenu x3",
         "logo": "icones/drawing2.jpg",
         "seuil": 1.5e3,
-        "idcible": 1,
+        "idcible": 2,
         "ratio": 3,
         "typeratio": "gain",
         "unlocked": false
@@ -372,7 +372,7 @@ module.exports =
         "name": "Esquisse en couleur : revenu x3",
         "logo": "icones/drawing3.jpg",
         "seuil": 2e3,
-        "idcible": 1,
+        "idcible": 3,
         "ratio": 3,
         "typeratio": "gain",
         "unlocked": false
@@ -381,7 +381,7 @@ module.exports =
         "name": "Illustration en couleur : revenu x3",
         "logo": "icones/drawing4.jpg",
         "seuil": 2.5e3,
-        "idcible": 1,
+        "idcible": 4,
         "ratio": 3,
         "typeratio": "gain",
         "unlocked": false
@@ -390,7 +390,7 @@ module.exports =
         "name": "Illustration professionnelle : revenu x3",
         "logo": "icones/drawing5.jpg",
         "seuil": 3e3,
-        "idcible": 1,
+        "idcible": 5,
         "ratio": 3,
         "typeratio": "gain",
         "unlocked": false
@@ -399,7 +399,7 @@ module.exports =
         "name": "Portrait Professionnel : revenu x3",
         "logo": "icones/drawing6.jpg",
         "seuil": 4e3,
-        "idcible": 1,
+        "idcible": 6,
         "ratio": 3,
         "typeratio": "gain",
         "unlocked": false
@@ -417,7 +417,7 @@ module.exports =
         "name": "Portrait au gris : vitesse x3",
         "logo": "icones/drawing2.jpg",
         "seuil": 7e3,
-        "idcible": 1,
+        "idcible": 2,
         "ratio": 3,
         "typeratio": "vitesse",
         "unlocked": false
@@ -426,7 +426,7 @@ module.exports =
         "name": "Esquisse en couleur : vitesse x3",
         "logo": "icones/drawing3.jpg",
         "seuil": 9e3,
-        "idcible": 1,
+        "idcible": 3,
         "ratio": 3,
         "typeratio": "vitesse",
         "unlocked": false
@@ -435,7 +435,7 @@ module.exports =
         "name": "Illustration en couleur : vitesse x3",
         "logo": "icones/drawing4.jpg",
         "seuil": 12e3,
-        "idcible": 1,
+        "idcible": 4,
         "ratio": 3,
         "typeratio": "vitesse",
         "unlocked": false
@@ -444,7 +444,7 @@ module.exports =
         "name": "Illustration professionnelle : vitesse x3",
         "logo": "icones/drawing5.jpg",
         "seuil": 15e3,
-        "idcible": 1,
+        "idcible": 5,
         "ratio": 3,
         "typeratio": "vitesse",
         "unlocked": false
@@ -453,7 +453,7 @@ module.exports =
         "name": "Portrait Professionnel : vitesse x3",
         "logo": "icones/drawing6.jpg",
         "seuil": 19e3,
-        "idcible": 1,
+        "idcible": 6,
         "ratio": 3,
         "typeratio": "vitesse",
         "unlocked": false
@@ -476,7 +476,7 @@ module.exports =
         "logo": "icones/manager1.jpg",
         "seuil": 10,
         "idcible": 1,
-        "ratio": 0,
+        "ratio": 1,
         "typeratio": "gain",
         "unlocked": false
         },
@@ -484,8 +484,8 @@ module.exports =
         "name": "Victoire Jullien",
         "logo": "icones/manager2.jpg",
         "seuil": 10,
-        "idcible": 1,
-        "ratio": 0,
+        "idcible": 2,
+        "ratio": 1,
         "typeratio": "gain",
         "unlocked": false
         },
@@ -493,8 +493,8 @@ module.exports =
         "name": "Carole Astier",
         "logo": "icones/manager3.jpg",
         "seuil": 10,
-        "idcible": 1,
-        "ratio": 0,
+        "idcible": 3,
+        "ratio": 1,
         "typeratio": "gain",
         "unlocked": false
         },
@@ -502,8 +502,8 @@ module.exports =
         "name": "Gaston Asselin",
         "logo": "icones/manager4.jpg",
         "seuil": 80,
-        "idcible": 1,
-        "ratio": 0,
+        "idcible": 4,
+        "ratio": 1,
         "typeratio": "gain",
         "unlocked": false
         },
@@ -511,8 +511,8 @@ module.exports =
         "name": "Arthur Carré",
         "logo": "icones/manager5.jpg",
         "seuil": 10,
-        "idcible": 1,
-        "ratio": 0,
+        "idcible": 5,
+        "ratio": 1,
         "typeratio": "gain",
         "unlocked": false
         },
@@ -520,8 +520,8 @@ module.exports =
         "name": "Lucille Rossignol",
         "logo": "icones/manager6.jpg",
         "seuil": 10,
-        "idcible": 1,
-        "ratio": 0,
+        "idcible": 6,
+        "ratio": 1,
         "typeratio": "gain",
         "unlocked": false
         },
