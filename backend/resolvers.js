@@ -226,7 +226,6 @@ module.exports = {
                 }
             }
             )
-
             //MAJ
             context.world.lastupdate = Date.now();
 
@@ -274,7 +273,7 @@ module.exports = {
             //MAJ
             context.world.lastupdate = Date.now();
             
-            saveWorld(context)      //appel de la fonction saveWorld
+            saveWorld(context)   //appel de la fonction saveWorld
             return angelupgrades
         },
     }
