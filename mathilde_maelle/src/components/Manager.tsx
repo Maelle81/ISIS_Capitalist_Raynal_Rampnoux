@@ -1,58 +1,45 @@
-import { Alert, Button, Snackbar } from "@mui/material";
+import { Alert, Button, IconButton, Snackbar } from "@mui/material";
 import { useState } from "react";
 import { Palier, Product, World } from "../world";
 //import Toast from 'react-bootstrap/Toast';
 import { ToastContainer, toast } from "react-toastify";
 import "../assests/css/left-menu.css"
+import { gql, useMutation } from "@apollo/client";
 
 
 type ManagerProps = {
   world: World;
-  onClose: () => void;
   showManagers: boolean;
   setShowManagers: (show: boolean) => void;
   money:number;
   updateWorld: (world: World) => void
   setMoney:(money:number)=> void
+  hireManager: (manager:Palier)=> void
+  setsnackBar:( snackBar :boolean)=> void
+  snackBar: boolean
 };
 
-export default function Manager({ setMoney,world, onClose,showManagers, setShowManagers,money, updateWorld}: ManagerProps) {
+export default function Manager({ setsnackBar,snackBar,hireManager, setMoney,world, showManagers, setShowManagers,money, updateWorld}: ManagerProps) {
   //showManagers =true
   //let world = require("../world");
   
   //const url = "https://isiscapitalistgraphql.kk.kurasawa.fr/";
   const url= "http://localhost:4000/"
   const [open ,setOpen] = useState(false)
-  const [snackBarMng, setsnackBarMng]=useState(false)
-  
-  function hireManager(manager: Palier) {
-    if (money >= manager.seuil){
-      manager.unlocked = true
-      setMoney(money - manager.seuil)
-      world.products[manager.idcible - 1].managerUnlocked = true
-      //setShowManagers(false)
-      /*toast(manager.name +' a été embauché !'
-       , {         
-        position: toast.POSITION.TOP_RIGHT,
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,}
-      )*/
-      setsnackBarMng(true)
-     
-      updateWorld(world)
-      //setOpen(true)     
-      
+
+  const handleClose = (event: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
     }
-    
+    setOpen(false);
+  };
+
+  function onCloseMng() {
+    //setShow(false);
+    //setIsVisible(false)
+    setShowManagers(false)
   }
 
-  const handleCloseSnackbar = () => {
-    setOpen(false)
-  }
 
   return (
     <div className="modal">    
@@ -95,7 +82,7 @@ export default function Manager({ setMoney,world, onClose,showManagers, setShowM
             ))
           //onClick={onClose}
         }
-        <Button className="closebutton" onClick={onClose}>
+        <Button className="closebutton" onClick={onCloseMng}>
           Close
         </Button>
       </div>
@@ -105,15 +92,15 @@ export default function Manager({ setMoney,world, onClose,showManagers, setShowM
     
     <Snackbar 
       className="snackBar"
-      open={snackBarMng}
+      open={snackBar}
       autoHideDuration={3000}
-      onClose={()=> setsnackBarMng(false)}
-      message="Le manager a été embauché !"
+      onClose={()=> setsnackBar(false)}
+     
       >
-        <Alert severity="success" sx={{width:'100%'}}>
+        <Alert severity="info" sx={{width:'100%'}}>
           Le manager vient d'être d'embauché !
         </Alert>
-      </Snackbar>
+    </Snackbar>
       
     </div>
   );

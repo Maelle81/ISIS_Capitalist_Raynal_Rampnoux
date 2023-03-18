@@ -85,7 +85,8 @@ function App() {
      
 
 
-    const [username, setUsername] = useState(lusername)
+  const [username, setUsername] = useState(lusername)
+  
 
   const onUserNameChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
 
@@ -97,13 +98,25 @@ function App() {
   };
   
   const { loading, error, data, refetch } = useQuery(GET_WORLD, {
+    //variables:{username},
     context: { headers: { "x-user": username } }
   });
+
+  /*
+  useEffect(() => {
+    refetchWorld()
+  }, [username])
+
+  const refetchWorld = () => {
+    localStorage.setItem("username", username);
+    refetch()
+  }*/
+
 
   let corps = undefined
   if (loading) corps = <div> Loading... </div>
   else if (error) corps = <div> Erreur de chargement du monde ! </div>
-  else corps = <Main loadworld={data.getWorld} username={username} />
+  else corps = <Main loadworld={data.getWorld} username={username} onUserNameChanged={onUserNameChanged} />
 
   
 
